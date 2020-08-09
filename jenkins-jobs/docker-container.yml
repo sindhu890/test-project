@@ -1,0 +1,19 @@
+##docker container using command module 
+---
+- hosts: all
+  become: true
+
+  tasks:
+  - name: docker image using docker command
+    command: docker run -d --name devops-container -p 8080:8080 devops-image
+	
+####docker container by module 	
+#  tasks:
+#  - name: create devops-container
+#    docker_container:
+#      name: devops-container
+#      image: devops-image
+#      state: present
+#      recreate: yes
+#      ports:
+#        - "8080:8080"

@@ -1,0 +1,20 @@
+## docker image using command module 
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: docker image
+    command: docker build -t devops-image .
+    args:
+      chdir: /opt/docker
+
+### using module 
+
+#  tasks:
+#  - name: docker image
+#    docker_image:
+#      build:
+#        path: /opt/docker
+#      name: devops-image
+#     tag: v1
+#     source: build
